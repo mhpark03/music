@@ -1,4 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Microphone permission for recording -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <!-- Storage permissions for file access -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
     <application
         android:label="music_composer_app"
         android:name="${applicationName}"

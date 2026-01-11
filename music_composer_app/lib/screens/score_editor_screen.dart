@@ -24,23 +24,23 @@ class _ScoreEditorScreenState extends State<ScoreEditorScreen> {
         final track = provider.tracks[widget.trackId];
         if (track == null) {
           return const Scaffold(
-            body: Center(child: Text('Track not found')),
+            body: Center(child: Text('트랙을 찾을 수 없습니다')),
           );
         }
 
         return Scaffold(
           appBar: AppBar(
-            title: Text('${track.name} - Score Editor'),
+            title: Text('${track.name} - 악보 편집기'),
             backgroundColor: _getTrackColor(track.instrumentType).withOpacity(0.3),
             actions: [
               IconButton(
                 icon: const Icon(Icons.delete_sweep),
-                tooltip: 'Clear All',
+                tooltip: '모두 삭제',
                 onPressed: () => _showClearDialog(context, provider),
               ),
               IconButton(
                 icon: const Icon(Icons.auto_fix_high),
-                tooltip: 'Auto Generate',
+                tooltip: '자동 생성',
                 onPressed: () => _autoGenerate(provider, track),
               ),
             ],
@@ -76,7 +76,7 @@ class _ScoreEditorScreenState extends State<ScoreEditorScreen> {
       color: Colors.grey[200],
       child: Row(
         children: [
-          const Text('Velocity: '),
+          const Text('세기: '),
           Expanded(
             child: Slider(
               value: _velocity,
@@ -109,11 +109,11 @@ class _ScoreEditorScreenState extends State<ScoreEditorScreen> {
         children: [
           Icon(Icons.touch_app, size: 16),
           SizedBox(width: 4),
-          Text('Tap: Add note'),
+          Text('탭: 노트 추가'),
           SizedBox(width: 16),
           Icon(Icons.close, size: 16),
           SizedBox(width: 4),
-          Text('Long press: Delete'),
+          Text('길게 누르기: 삭제'),
         ],
       ),
     );
@@ -136,19 +136,19 @@ class _ScoreEditorScreenState extends State<ScoreEditorScreen> {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text('Clear All Notes'),
-        content: const Text('Are you sure you want to delete all notes?'),
+        title: const Text('모든 노트 삭제'),
+        content: const Text('모든 노트를 삭제하시겠습니까?'),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: const Text('Cancel'),
+            child: const Text('취소'),
           ),
           TextButton(
             onPressed: () {
               provider.clearTrack(widget.trackId);
               Navigator.pop(context);
             },
-            child: const Text('Clear'),
+            child: const Text('삭제'),
           ),
         ],
       ),
@@ -203,7 +203,7 @@ class _ScoreEditorScreenState extends State<ScoreEditorScreen> {
     }
 
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('Pattern generated!')),
+      const SnackBar(content: Text('패턴이 생성되었습니다!')),
     );
   }
 }

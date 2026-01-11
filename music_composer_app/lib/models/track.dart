@@ -2,10 +2,10 @@ import 'note.dart';
 
 /// 악기 타입
 enum InstrumentType {
-  synth('Synthesizer', 'Pad sounds'),
-  guitar('Electric Guitar', 'Clean tone'),
-  bass('Electric Bass', 'Finger bass'),
-  drums('Drum Machine', 'Kick/Snare/HiHat');
+  synth('신디사이저', '패드 사운드'),
+  guitar('일렉트릭 기타', '클린 톤'),
+  bass('일렉트릭 베이스', '핑거 베이스'),
+  drums('드럼 머신', '킥/스네어/하이햇');
 
   final String displayName;
   final String description;
@@ -69,13 +69,13 @@ class Track {
 
 /// 음악 스타일
 enum MusicStyle {
-  electronic('Electronic', 128),
-  rock('Rock', 120),
-  pop('Pop', 110),
-  jazz('Jazz', 95),
-  ambient('Ambient', 70),
-  ballad('Ballad', 72),
-  trot('Trot', 115);
+  electronic('일렉트로닉', 128),
+  rock('록', 120),
+  pop('팝', 110),
+  jazz('재즈', 95),
+  ambient('앰비언트', 70),
+  ballad('발라드', 72),
+  trot('트로트', 115);
 
   final String displayName;
   final int defaultBpm;

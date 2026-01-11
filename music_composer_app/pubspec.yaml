@@ -44,6 +44,15 @@ dependencies:
   # State management
   provider: ^6.1.2
 
+  # Audio recording
+  record: ^6.1.2
+
+  # File picker for audio files
+  file_picker: ^8.1.2
+
+  # Permission handling
+  permission_handler: ^11.3.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -16,7 +16,7 @@ class MusicComposerApp extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (_) => MusicProvider(),
       child: MaterialApp(
-        title: 'Electric Music Composer',
+        title: '전기 악기 음악 작곡기',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(
